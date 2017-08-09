@@ -1,0 +1,15 @@
+[Unit]
+Description=Ghost Container
+After=docker.service
+Requires=docker.service
+ 
+[Service]
+TimeoutStartSec=0
+Restart=always
+ExecStartPre=-/usr/bin/docker stop %n
+ExecStartPre=-/usr/bin/docker rm %n
+ExecStartPre=/usr/bin/docker pull ghost:1.5-alpine
+ExecStart=/usr/bin/docker run --rm --name %n -v /var/lib/ghost/content:/var/lib/ghost/content -v /var/lib/ghost/config.json:/var/lib/ghost/config.production.json ghost:1.5-alpine
+ 
+[Install]
+WantedBy=multi-user.target
