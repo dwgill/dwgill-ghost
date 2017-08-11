@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# This simple script renews the SSL certificates for the current machine
+# using Let's Encrypt's certbot program. At the time of this writing,
+# the domains this renews the certificates for are dwgill.com and
+# www.dwgill.com, although it should work no matter which domains are
+# currently being managed by certbot.
+#
+# The -q option silences all output except for errors.
+
+certbot renew -q --renew-hook "systemctl reload nginx.service"
