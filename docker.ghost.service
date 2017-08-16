@@ -11,7 +11,7 @@ ExecStartPre=-/usr/bin/docker rm %n
 ExecStartPre=/usr/bin/docker pull ghost:1.5-alpine
 ExecStart=/usr/bin/docker run --rm --name %n \
     -v /var/lib/ghost/content:/var/lib/ghost/content \
-    -v /var/lib/ghost/config.json:/var/lib/ghost/config.production.json \
+    -e url=https://dwgill.com \
     -p 127.0.0.1:2368:2368 \
     ghost:1.5-alpine
  
