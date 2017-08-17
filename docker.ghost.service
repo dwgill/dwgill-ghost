@@ -6,7 +6,6 @@ Requires=nginx.service
 After=nginx.service
  
 [Service]
-TimeoutStartSec=0
 Restart=always
 ExecStartPre=-/usr/bin/docker stop %n
 ExecStartPre=-/usr/bin/docker rm %n
