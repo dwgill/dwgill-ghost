@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# This script simply restarts the docker.ghost.service
+
+systemctl restart docker.ghost.service
