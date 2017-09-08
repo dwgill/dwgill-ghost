@@ -7,9 +7,9 @@ function return_to_orig {
 
 trap return_to_orig EXIT
 
-GHOST_CONTENT_DIR="${GHOST_CONTENT_DIR:-'/var/lib/ghost/content/'}"
+GHOST_CONTENT_DIR="${GHOST_CONTENT_DIR:-/var/lib/ghost/content/}"
 
-GHOST_BACKUP_DIRECTORY="${GHOST_BACKUP_DIRECTORY:-'/var/lib/ghost/backup/'}"
+GHOST_BACKUP_DIRECTORY="${GHOST_BACKUP_DIRECTORY:-/var/lib/ghost/backup/}"
 
 CURRENT_DATE=`date +"%Y-%m-%d"`
 
