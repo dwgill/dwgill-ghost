@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+GHOST_CONTENT_DIR="${GHOST_CONTENT_DIR:-'/var/lib/ghost/content'}"
+
+GHOST_BACKUP_DIRECTORY="${GHOST_BACKUP_DIRECTORY:-'/var/lib/ghost/backup'}"
+
+CURRENT_DATE=`date +"%Y-%m-%d"`
+
+FILENAME="ghost-backup-${CURRENT_DATE}.tar.giz"
+
+mkdir -p "${GHOST_BACKUP_DIRECTORY}"
+
+tar -zcvf "${GHOST_BACKUP_DIRECTORY}/${FILENAME}" "${GHOST_CONTENT_DIR}"
