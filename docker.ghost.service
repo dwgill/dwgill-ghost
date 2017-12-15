@@ -7,7 +7,7 @@ After=nginx.service
  
 [Service]
 Restart=always
-ExecStartPre=/usr/bin/docker pull ghost:1.16-alpine
+ExecStartPre=/usr/bin/docker pull ghost:1.19-alpine
 ExecStartPre=-/usr/bin/docker stop %n
 ExecStartPre=-/usr/bin/docker rm %n
 ExecStart=/usr/bin/docker run \
@@ -15,7 +15,7 @@ ExecStart=/usr/bin/docker run \
     -v /var/lib/ghost/content:/var/lib/ghost/content \
     -e url=https://dwgill.com \
     -p 127.0.0.1:2368:2368 \
-    ghost:1.16-alpine
+    ghost:1.19-alpine
  
 [Install]
 WantedBy=multi-user.target
